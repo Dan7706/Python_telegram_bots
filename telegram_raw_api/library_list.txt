@@ -1,0 +1,27 @@
+There are different ways to interact with telegram bot using their API.
+First way and obviuosly the hardest is using CURL (Client URL).
+    for sending messages:   curl -X POST  -H "Content-Type: application/json" \
+     -d '{"chat_id": "CHAT_ID", "text": "YOUR_MESSAGE"}' \
+     "https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage"
+    (where -X specifies http which in the end is transformed to https,
+        -H indicates HTTP headers for the request,
+        -d '{"key": "value"}' specifies the JSON payload for the request.)
+
+
+    for getting updates:  curl "https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates"
+
+This method is the hardest but possible for many basic operations.
+
+There is an easier way to interact with telegram bot api using aiohttp and asyncio 
+modules/frameworks and it makes our lives easier. more examples I provide in raw_api_code.py
+file in the directory.
+
+The raw api is lying on the basics of modern frameworks: such as TelegramBotAPI, aiogram, 
+pyrogram telethon and etc...
+Some of them for interaction use only token provided from telegram botfather, meanwhile 
+the other are using hash within the token. 
+     
+
+
+
+
